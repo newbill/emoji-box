@@ -1,0 +1,40 @@
+{
+  "name": "emoji-box",
+  "private": false,
+  "keywords": [
+    "vue",
+    "vue3",
+    "emoji",
+    "emoji-box"
+  ],
+  "version": "1.0.6",
+  "repository": "https://github.com/newbill/emoji-box",
+  "license": "Apache",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "lib": "vite build --mode lib"
+  },
+  "files": [
+    "dist"
+  ],
+  "main": "./dist/emoji.umd.js",
+  "module": "./dist/emoji.es.js",
+  "exports": {
+    ".": {
+      "import": "./dist/emoji.es.js",
+      "require": "./dist/emoji.umd.js"
+    },
+    "./dist/style.css": {
+      "import": "./dist/style.css",
+      "require": "./dist/style.css"
+    }
+  },
+  "dependencies": {
+    "vue": "^3.2.37"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-vue": "^3.1.0",
+    "vite": "^3.1.0"
+  }
+}

@@ -1,0 +1,109 @@
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  border-radius: 9999px;
+  background: #ccc;
+}
+::-webkit-scrollbar-thumb {
+  height: auto;
+  border-radius: 9999px;
+  background-color: #888;
+}
+::-webkit-scrollbar-thumb:hover {
+  background-color: #666;
+}
+
+.emoji-panel {
+  width: 100%;
+  background-color: #cccccc40;
+  border-radius: 5px;
+}
+.emoji-tab {
+  display: inline-flex;
+  flex-wrap: wrap;
+  margin: 0 10px;
+}
+.emoji-tab input[type="radio"] {
+  display: none;
+}
+.emoji-tab label {
+  position: relative;
+  height: 40px;
+  line-height: 40px;
+  cursor: pointer;
+}
+.emoji-tab label:not(:last-child) {
+  margin-right: 20px;
+}
+.emoji-tab label:after {
+  position: absolute;
+  content: "";
+  height: 3px;
+  width: 100%;
+  background-color: green;
+  left: 0;
+  bottom: 3px;
+  transition: 0.3s;
+  transform: scaleX(0);
+}
+.emoji-tab input[type="radio"]:checked + label:after {
+  transform: scaleX(1);
+}
+.emoji-box {
+  position: relative;
+  animation: emoji-box-animation 0.3s linear;
+}
+.emoji-container {
+  overflow-y: auto;
+}
+.emoji-wrapper {
+  width: 24px;
+  height: 24px;
+  position: relative;
+  overflow: hidden;
+  display: inline-block;
+  transform: scale(1.4);
+  margin: 12px;
+}
+.emoji-wrapper img {
+  width: 24px;
+  height: 24px;
+}
+.emoji-wrapper img:hover {
+  background-color: #cccccc40;
+  border-radius: 3px;
+  cursor: pointer;
+}
+.emoji {
+  width: 24px;
+  height: 24px;
+  margin: 0 2px;
+  vertical-align: middle;
+}
+.delete-button {
+  position: absolute;
+  bottom: 5px;
+  right: 10px;
+  height: 24px;
+  line-height: 24px;
+  background-color: rgba(204, 204, 204, 0.5);
+  padding: 0 5px;
+  border-radius: 3px;
+  box-sizing: initial;
+}
+.delete-button:hover {
+  cursor: pointer;
+}
+
+@keyframes emoji-box-animation {
+  0% {
+    opacity: 0;
+    transform: scale(0.6,0.6);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1, 1);
+  }
+}
